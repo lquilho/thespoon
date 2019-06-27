@@ -1,3 +1,15 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'about', to: 'pages#about'
+  get 'contact', to: 'pages#contact'
+
+  # http://localhost3000/restaurants
+  get 'restaurants', to: 'restaurants#index'
+  get 'restaurants/:id', to: 'restaurants#show', as: :restaurant
+
+  post 'restaurants', to: 'restaurants#create'
+
+
+  root to: 'pages#home'
+
+
 end
